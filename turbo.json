@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "outputs": [".next/**", "!.next/cache/**", "other-output-dirs/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^db:generate"]
     },
     "test": {
       "dependsOn": ["^build"]
@@ -16,8 +16,15 @@
       "dependsOn": ["^check-types"]
     },
     "dev": {
+      "dependsOn": ["^db:generate"],
       "cache": false,
       "persistent": true
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
     }
   }
 }
