@@ -1,0 +1,55 @@
+// 顧客モデル
+model Customer {
+  id            String         @id @default(nanoid())
+  email         String         @unique
+  firstName     String
+  lastName      String
+  phone         String?
+  hasAccount    Boolean        @default(false)
+  passwordHash  String?
+  metadata      Json?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  // リレーション
+  groups        CustomerGroup[]
+  orders        Order[]
+  addresses     Address[]
+  billingAddress Address?       @relation("BillingAddress", fields: [billingAddressId], references: [id])
+  billingAddressId String?
+}
+
+// 住所モデル
+model Address {
+  id          String    @id @default(nanoid())
+  customerId  String
+  firstName   String
+  lastName    String
+  address1    String
+  address2    String?
+  city        String
+  countryCode String
+  province    String?
+  postalCode  String
+  phone       String?
+  company     String?
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  // リレーション
+  customer    Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  billingFor  Customer[] @relation("BillingAddress")
+}
+
+// 顧客グループモデル
+model CustomerGroup {
+  id        String     @id @default(nanoid())
+  name      String
+  metadata  Json?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  
+  // リレーション
+  customers Customer[]
+}
