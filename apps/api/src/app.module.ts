@@ -3,7 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { TRPCModule } from 'nestjs-trpc';
-import { TrpcPanelController } from './panel/trpc-panel.controller';
 
 @Module({
   imports: [
@@ -11,7 +10,7 @@ import { TrpcPanelController } from './panel/trpc-panel.controller';
       autoSchemaFile: './src/@generated',
     }),
   ],
-  controllers: [AppController, TrpcPanelController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
