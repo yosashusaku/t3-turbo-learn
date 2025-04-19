@@ -1,3 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 node_modules
-# Keep environment variables out of version control
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# turbo
+.turbo
+
+# vercel
+.vercel
+
+# vscode
+.vscode/
+
+.idea/
+
+#storybook
+storybook-static
+
+.node-version
+/apps/web/tsconfig.tsbuildinfo
+/docker/data/
+
+# tiptap pro extension用にトークンを書くため、git履歴に含めない
+.npmrc
+
+# 個人用ファイルを置くためのディレクトリ。メンバーそれぞれで使えるようにgitに含めない
+.private
+
+.clinerules
+.cursorrules
+.cursor
