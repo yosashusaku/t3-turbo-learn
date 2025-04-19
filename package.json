@@ -5,10 +5,12 @@
     "build": "turbo build",
     "test": "turbo run test",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "biome lint .",
+    "format": "biome format . --write",
+    "check": "biome check --apply ."
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "prettier": "^3.5.3",
     "turbo": "^2.5.0",
     "typescript": "5.8.3"
@@ -17,8 +19,5 @@
   "engines": {
     "node": ">=18"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "workspaces": ["apps/*", "packages/*"]
 }

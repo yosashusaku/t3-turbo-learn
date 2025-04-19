@@ -1,13 +1,13 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
 
-import { TRPCModule } from 'nestjs-trpc';
+import { TRPCModule } from "nestjs-trpc";
 
 @Module({
   imports: [
     TRPCModule.forRoot({
-      autoSchemaFile: './src/@generated',
+      autoSchemaFile: "./src/@generated",
     }),
   ],
   controllers: [AppController],

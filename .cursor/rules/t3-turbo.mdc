@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- パッケージマネージャーはpnpmを使う
+- ORMはPrisma、pakages/databaseで使う
+- apps/webはNextJSのApp Routerでフロントエンドを実装する。
+- apps/apiはNestJSでバックエンドを実装する。
