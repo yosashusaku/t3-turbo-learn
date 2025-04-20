@@ -1,8 +1,8 @@
 import { Inject } from "@nestjs/common";
 import { Input, Mutation, Query, Router } from "nestjs-trpc";
 import { CommandBus } from "@nestjs/cqrs";
-import { CreateCustomerCommand } from "./usecase/command/create-customer.command";
-import { CreateCustomerInput, createCustomerInputSchema, CreateCustomerOutput, createCustomerOutputSchema } from "./customer.schema";
+import { CreateCustomerCommand } from "../usecase/command/dto/create-customer.command";
+import { CreateCustomerInput, createCustomerInputSchema, CreateCustomerOutput, createCustomerOutputSchema } from "./schema/create-customer.schema";
 
 @Router({ alias: "customer" })
 export class CustomerRouter {
