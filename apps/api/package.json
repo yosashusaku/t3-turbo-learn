@@ -28,6 +28,7 @@
     "@nestjs/cqrs": "^11.0.3",
     "@nestjs/platform-express": "^10.4.17",
     "@trpc/server": "^10.45.2",
+    "bcrypt": "^5.1.1",
     "nanoid": "^5.1.5",
     "nestjs-trpc": "^1.6.1",
     "reflect-metadata": "^0.2.2",
