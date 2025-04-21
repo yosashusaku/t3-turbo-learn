@@ -1,25 +1,21 @@
 import { Address } from './address.entity';
 import { CustomerGroup } from './customer-group.entity';
-import { Order } from './order.entity';
 
 export class Customer {
   id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  phone?: string;
   hasAccount: boolean;
-  passwordHash?: string;
-  metadata?: Record<string, unknown>;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  metadata?: JSON;
+  createdBy?: string;
   createdAt: Date;
   updatedAt: Date;
 
   // リレーション
   groups?: CustomerGroup[];
-  orders?: Order[];
   addresses?: Address[];
-  billingAddress?: Address;
-  billingAddressId?: string;
 
   constructor(data: Partial<Customer>) {
     Object.assign(this, data);
@@ -36,15 +32,12 @@ export class Customer {
   }
 
   // メタデータを取得するメソッド
-  getMetadata(key: string): unknown {
-    return this.metadata?.[key];
+  getMetadata(): JSON {
+    return this.metadata;
   }
 
   // メタデータを設定するメソッド
-  setMetadata(key: string, value: unknown): void {
-    if (!this.metadata) {
-      this.metadata = {};
-    }
-    this.metadata[key] = value;
+  setMetadata(json: JSON): void {
+    this.metadata = json
   }
 } 
