@@ -1,9 +1,10 @@
-import { Fulfillment } from "./fuifillment.eneity";
+import { Fulfillment } from "./fulfillment.entity";
 import { ServiceZone } from "./service-zone.entity";
 import { ShippingOptionType } from "./shipping-option-type.entity";
 import { ShippingOptionRule } from "./shipping-option-rule.entity";
 import { ShippingProfile } from "./shipping-profile.entity";
 import { FulfillmentProvider } from "./fulfillment-provider.entity";
+
 export class ShippingOption {
   id: string;
   name: string;

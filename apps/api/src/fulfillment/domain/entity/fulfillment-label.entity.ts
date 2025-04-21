@@ -1,4 +1,4 @@
-import { Fulfillment } from "./fuifillment.eneity";
+import { Fulfillment } from "./fulfillment.entity";
 
 export class FulfillmentLabel {
   id: string;
