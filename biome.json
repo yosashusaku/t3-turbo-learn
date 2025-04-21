@@ -8,7 +8,8 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noExplicitAny": "error"
+        "noExplicitAny": "error",
+        "noConfusingVoidType": "off"
       },
       "style": {
         "useImportType": "off"
